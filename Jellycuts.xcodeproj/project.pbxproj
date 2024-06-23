@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DB290B8D2A31AB1D00BEAB7F /* RunestoneThemes in Frameworks */ = {isa = PBXBuildFile; productRef = DB290B8C2A31AB1D00BEAB7F /* RunestoneThemes */; };
+		D75996CE2C28E7B800A37771 /* Open-Jellycore in Frameworks */ = {isa = PBXBuildFile; productRef = D75996CD2C28E7B800A37771 /* Open-Jellycore */; };
+		D75996D12C28E8C300A37771 /* RunestoneThemes in Frameworks */ = {isa = PBXBuildFile; productRef = D75996D02C28E8C300A37771 /* RunestoneThemes */; };
+		D75996D32C28E8C300A37771 /* SwiftThemes in Frameworks */ = {isa = PBXBuildFile; productRef = D75996D22C28E8C300A37771 /* SwiftThemes */; };
+		D75996D62C28EA1E00A37771 /* TreeSitterJellyRunestone in Frameworks */ = {isa = PBXBuildFile; productRef = D75996D52C28EA1E00A37771 /* TreeSitterJellyRunestone */; };
 		DB4680D82A147AAC003964CC /* JellycutsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4680D72A147AAC003964CC /* JellycutsApp.swift */; };
 		DB4680DA2A147AAC003964CC /* JellycutsDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4680D92A147AAC003964CC /* JellycutsDocument.swift */; };
 		DB4680DC2A147AAC003964CC /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4680DB2A147AAC003964CC /* DocumentView.swift */; };
@@ -18,9 +21,6 @@
 		DB4681162A14835E003964CC /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4681152A14835E003964CC /* ErrorHandler.swift */; };
 		DB46811A2A1483D6003964CC /* HydrogenReporter in Frameworks */ = {isa = PBXBuildFile; productRef = DB4681192A1483D6003964CC /* HydrogenReporter */; };
 		DB4681212A149591003964CC /* RunestoneEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4681202A149591003964CC /* RunestoneEditor.swift */; };
-		DB4EAFC12A19AB9300B44F4D /* Open-Jellycore in Frameworks */ = {isa = PBXBuildFile; productRef = DB4EAFC02A19AB9300B44F4D /* Open-Jellycore */; };
-		DB4EAFC32A19AB9300B44F4D /* Runestone in Frameworks */ = {isa = PBXBuildFile; productRef = DB4EAFC22A19AB9300B44F4D /* Runestone */; };
-		DB4EAFC52A19AB9300B44F4D /* TreeSitterJellyRunestone in Frameworks */ = {isa = PBXBuildFile; productRef = DB4EAFC42A19AB9300B44F4D /* TreeSitterJellyRunestone */; };
 		DB51953B2A33B31A00738A85 /* BridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB51953A2A33B31A00738A85 /* BridgeView.swift */; };
 		DB51953D2A33B3CF00738A85 /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB51953C2A33B3CF00738A85 /* WebSocket.swift */; };
 		DB66094E2A315C19001431B2 /* SettingsBehaviorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB66094D2A315C19001431B2 /* SettingsBehaviorView.swift */; };
@@ -129,7 +129,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		DB290B8B2A31AAC100BEAB7F /* Swift-Themes */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "Swift-Themes"; path = "Packages/Swift-Themes"; sourceTree = "<group>"; };
 		DB4680D42A147AAC003964CC /* Jellycuts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jellycuts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB4680D72A147AAC003964CC /* JellycutsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JellycutsApp.swift; sourceTree = "<group>"; };
 		DB4680D92A147AAC003964CC /* JellycutsDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JellycutsDocument.swift; sourceTree = "<group>"; };
@@ -142,9 +141,6 @@
 		DB4681132A148131003964CC /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
 		DB4681152A14835E003964CC /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		DB4681202A149591003964CC /* RunestoneEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunestoneEditor.swift; sourceTree = "<group>"; };
-		DB4EAFBD2A19AA8700B44F4D /* Runestone */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Runestone; path = Packages/Runestone; sourceTree = "<group>"; };
-		DB4EAFBE2A19AA9100B44F4D /* tree-sitter-jelly */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "tree-sitter-jelly"; path = "Packages/tree-sitter-jelly"; sourceTree = "<group>"; };
-		DB4EAFBF2A19AACA00B44F4D /* Open-Jellycore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "Open-Jellycore"; path = "Packages/Open-Jellycore"; sourceTree = "<group>"; };
 		DB51953A2A33B31A00738A85 /* BridgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeView.swift; sourceTree = "<group>"; };
 		DB51953C2A33B3CF00738A85 /* WebSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
 		DB66094D2A315C19001431B2 /* SettingsBehaviorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBehaviorView.swift; sourceTree = "<group>"; };
@@ -174,7 +170,6 @@
 		DBD08AFE2A298D8F0068D7B8 /* ConsoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleView.swift; sourceTree = "<group>"; };
 		DBD216EA2A295FEF003BB5F2 /* QuickLook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLook.swift; sourceTree = "<group>"; };
 		DBD216EC2A296019003BB5F2 /* UIDevice+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Convenience.swift"; sourceTree = "<group>"; };
-		DBD48ADD2A30F39C002D8A4F /* TreeSitterJellyRunestone */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = TreeSitterJellyRunestone; path = Packages/TreeSitterJellyRunestone; sourceTree = "<group>"; };
 		DBD48AE12A313615002D8A4F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DBD48B022A3146C4002D8A4F /* SettingsAppearanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAppearanceView.swift; sourceTree = "<group>"; };
 		DBD48B042A31473D002D8A4F /* AppIconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconManager.swift; sourceTree = "<group>"; };
@@ -217,14 +212,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB290B8D2A31AB1D00BEAB7F /* RunestoneThemes in Frameworks */,
-				DB4EAFC12A19AB9300B44F4D /* Open-Jellycore in Frameworks */,
+				D75996D12C28E8C300A37771 /* RunestoneThemes in Frameworks */,
+				D75996D62C28EA1E00A37771 /* TreeSitterJellyRunestone in Frameworks */,
+				D75996CE2C28E7B800A37771 /* Open-Jellycore in Frameworks */,
 				DB6609532A316238001431B2 /* BetterSafariView in Frameworks */,
-				DB4EAFC32A19AB9300B44F4D /* Runestone in Frameworks */,
 				DBF310FF2A2540C10003606E /* KeychainSwift in Frameworks */,
-				DB4EAFC52A19AB9300B44F4D /* TreeSitterJellyRunestone in Frameworks */,
 				DBA2CDA22A42D0DD00107299 /* SFSymbols in Frameworks */,
 				DBB068932A341032004D522C /* ConfettiSwiftUI in Frameworks */,
+				D75996D32C28E8C300A37771 /* SwiftThemes in Frameworks */,
 				DB46811A2A1483D6003964CC /* HydrogenReporter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,11 +318,6 @@
 		DB4EAFBC2A19AA8700B44F4D /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				DB4EAFBF2A19AACA00B44F4D /* Open-Jellycore */,
-				DB4EAFBE2A19AA9100B44F4D /* tree-sitter-jelly */,
-				DB4EAFBD2A19AA8700B44F4D /* Runestone */,
-				DBD48ADD2A30F39C002D8A4F /* TreeSitterJellyRunestone */,
-				DB290B8B2A31AAC100BEAB7F /* Swift-Themes */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -574,14 +564,14 @@
 			name = Jellycuts;
 			packageProductDependencies = (
 				DB4681192A1483D6003964CC /* HydrogenReporter */,
-				DB4EAFC02A19AB9300B44F4D /* Open-Jellycore */,
-				DB4EAFC22A19AB9300B44F4D /* Runestone */,
-				DB4EAFC42A19AB9300B44F4D /* TreeSitterJellyRunestone */,
 				DBF310FE2A2540C10003606E /* KeychainSwift */,
 				DB6609522A316238001431B2 /* BetterSafariView */,
-				DB290B8C2A31AB1D00BEAB7F /* RunestoneThemes */,
 				DBB068922A341032004D522C /* ConfettiSwiftUI */,
 				DBA2CDA12A42D0DD00107299 /* SFSymbols */,
+				D75996CD2C28E7B800A37771 /* Open-Jellycore */,
+				D75996D02C28E8C300A37771 /* RunestoneThemes */,
+				D75996D22C28E8C300A37771 /* SwiftThemes */,
+				D75996D52C28EA1E00A37771 /* TreeSitterJellyRunestone */,
 			);
 			productName = Jellycuts;
 			productReference = DB4680D42A147AAC003964CC /* Jellycuts.app */;
@@ -616,7 +606,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					DB4680D32A147AAC003964CC = {
 						CreatedOnToolsVersion = 14.3;
@@ -642,6 +632,9 @@
 				DB6609512A316238001431B2 /* XCRemoteSwiftPackageReference "BetterSafariView" */,
 				DBB068912A341032004D522C /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 				DBA2CDA02A42D0DD00107299 /* XCRemoteSwiftPackageReference "SFSymbols" */,
+				D75996CC2C28E7B800A37771 /* XCRemoteSwiftPackageReference "Open-Jellycore" */,
+				D75996CF2C28E8C300A37771 /* XCRemoteSwiftPackageReference "Swift-Themes" */,
+				D75996D42C28EA1E00A37771 /* XCRemoteSwiftPackageReference "TreeSitterJellyRunestone" */,
 			);
 			productRefGroup = DB4680D52A147AAC003964CC /* Products */;
 			projectDirPath = "";
@@ -806,6 +799,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -865,6 +859,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -894,7 +889,7 @@
 				CURRENT_PROJECT_VERSION = 2;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 825FPALDZ5;
+				DEVELOPMENT_TEAM = 3266K738QH;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -919,7 +914,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 2.0;
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-symbol-graph-minimum-access-level private";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zlineman.Jellyfish;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fjfjfjfj.Jellyfish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -949,7 +944,7 @@
 				CURRENT_PROJECT_VERSION = 2;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 825FPALDZ5;
+				DEVELOPMENT_TEAM = 3266K738QH;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -974,7 +969,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 2.0;
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-symbol-graph-minimum-access-level private";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zlineman.Jellyfish;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fjfjfjfj.Jellyfish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -995,7 +990,7 @@
 				CODE_SIGN_ENTITLEMENTS = Actions/Actions.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = 825FPALDZ5;
+				DEVELOPMENT_TEAM = 3266K738QH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Actions/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Actions;
@@ -1007,7 +1002,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zlineman.Jellyfish.Shortcuts;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fjfjfjfj.Jellyfish.Shortcuts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1024,7 +1019,7 @@
 				CODE_SIGN_ENTITLEMENTS = Actions/Actions.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = 825FPALDZ5;
+				DEVELOPMENT_TEAM = 3266K738QH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Actions/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Actions;
@@ -1036,7 +1031,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zlineman.Jellyfish.Shortcuts;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fjfjfjfj.Jellyfish.Shortcuts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1081,6 +1076,30 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D75996CC2C28E7B800A37771 /* XCRemoteSwiftPackageReference "Open-Jellycore" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/chrysaora-achlyos/Open-Jellycore";
+			requirement = {
+				branch = lab000;
+				kind = branch;
+			};
+		};
+		D75996CF2C28E8C300A37771 /* XCRemoteSwiftPackageReference "Swift-Themes" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/chrysaora-achlyos/Swift-Themes";
+			requirement = {
+				branch = lab000;
+				kind = branch;
+			};
+		};
+		D75996D42C28EA1E00A37771 /* XCRemoteSwiftPackageReference "TreeSitterJellyRunestone" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/chrysaora-achlyos/TreeSitterJellyRunestone";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		DB4681182A1483D6003964CC /* XCRemoteSwiftPackageReference "HydrogenReporter" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ActuallyTaylor/HydrogenReporter";
@@ -1124,26 +1143,30 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DB290B8C2A31AB1D00BEAB7F /* RunestoneThemes */ = {
+		D75996CD2C28E7B800A37771 /* Open-Jellycore */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = D75996CC2C28E7B800A37771 /* XCRemoteSwiftPackageReference "Open-Jellycore" */;
+			productName = "Open-Jellycore";
+		};
+		D75996D02C28E8C300A37771 /* RunestoneThemes */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D75996CF2C28E8C300A37771 /* XCRemoteSwiftPackageReference "Swift-Themes" */;
 			productName = RunestoneThemes;
+		};
+		D75996D22C28E8C300A37771 /* SwiftThemes */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D75996CF2C28E8C300A37771 /* XCRemoteSwiftPackageReference "Swift-Themes" */;
+			productName = SwiftThemes;
+		};
+		D75996D52C28EA1E00A37771 /* TreeSitterJellyRunestone */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D75996D42C28EA1E00A37771 /* XCRemoteSwiftPackageReference "TreeSitterJellyRunestone" */;
+			productName = TreeSitterJellyRunestone;
 		};
 		DB4681192A1483D6003964CC /* HydrogenReporter */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DB4681182A1483D6003964CC /* XCRemoteSwiftPackageReference "HydrogenReporter" */;
 			productName = HydrogenReporter;
-		};
-		DB4EAFC02A19AB9300B44F4D /* Open-Jellycore */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = "Open-Jellycore";
-		};
-		DB4EAFC22A19AB9300B44F4D /* Runestone */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Runestone;
-		};
-		DB4EAFC42A19AB9300B44F4D /* TreeSitterJellyRunestone */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = TreeSitterJellyRunestone;
 		};
 		DB6609522A316238001431B2 /* BetterSafariView */ = {
 			isa = XCSwiftPackageProductDependency;

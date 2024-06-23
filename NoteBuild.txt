@@ -1,0 +1,137 @@
+#DATE  Sun Jun 23 17:15:58 CDT 2024
+
+[2024_06Jun_23 17:26:01] /Users/dev/OJPlayground_20240622_000
+$CMD pwd
+/Users/dev/OJPlayground_20240622_000
+
+[2024_06Jun_23 17:28:09] /Users/dev/OJPlayground_20240622_000
+$CMD git clone --recursive git@github.com:chrysaora-achlyos/Open-Jellycuts.git
+
+[2024_06Jun_23 17:29:00] /Users/dev/OJPlayground_20240622_000
+$CMD cd Open-Jellycuts
+
+[2024_06Jun_23 17:29:29] /Users/dev/OJPlayground_20240622_000/Open-Jellycuts
+$CMD git checkout -b lab000
+Switched to a new branch 'lab000'
+
+[2024_06Jun_23 17:34:57] /Users/dev/OJPlayground_20240622_000/Open-Jellycuts
+$CMD git push --set-upstream origin lab000
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'lab000' on GitHub by visiting:
+remote:      https://github.com/chrysaora-achlyos/Open-Jellycuts/pull/new/lab000
+remote: 
+To github.com:chrysaora-achlyos/Open-Jellycuts.git
+ * [new branch]      lab000 -> lab000
+branch 'lab000' set up to track 'origin/lab000'.
+
+// Finder  open /Users/dev/OJPlayground_20240622_000/Open-Jellycuts/Jellycuts.xcodeproj
+// xcode   select Jellycuts in upper left hand navigation
+// xcode   select _Signing & Capalilities_ tab
+
+// xcode   select TARGETS _Jellycuts_
+
+// xcode   select _All_ among All, Debug, Release
+// xcode   in _Signing (Debug)_
+// xcode   select my name in _Team_ dropdown
+// xcode   change _Bundle Identifier_ "com.fjfjfjfj.Jellyfish"
+// xcode   in _Signing (Release)
+// xcode   select my name in _Team_ dropdown
+// xcode   change _Bundle Identifier_ "com.fjfjfjfj.Jellyfish"
+
+// xcode   scroll down to _App Groups_
+// previous established group.com.fjfjfjfj.jellycuts on my apple developer account
+// xcode   check checkbox "group.com.fjfjfjfj.jellycuts"
+// xcode   uncheck checkbox "group.jellycuts"
+
+// xcode   scroll down to _iCloud_
+// previously established container iCloud.com.fjfjfjfj.jellycuts
+// xcode   check checkbox "iCloud.com.fjfjfjfj.jellycuts"
+// xcode   uncheck checkbox "iCloud.Jellycuts"
+
+// xcode   scroll down to _Keychain Sharing_
+// xcode   add _Keychain Group_ com.fjfjfjfj.Jellyfish
+// xcode   delete _Keychain Group_ com.zlineman.Jellyfish
+
+// xcode   select TARGETS _Actions_
+// xcode   select my name in _Team_ dropdown
+// xcode   change _Bundle Identifier_ "com.fjfjfjfj.Jellyfish"
+
+// xcode   scroll down to _App Groups_
+// previous established group.com.fjfjfjfj.jellycuts on my apple developer account
+// xcode   check checkbox "group.com.fjfjfjfj.jellycuts"
+// xcode   uncheck checkbox "group.jellycuts"
+
+[2024_06Jun_23 17:35:05] /Users/dev/OJPlayground_20240622_000/Open-Jellycuts
+$CMD cp Jellycuts/Helpers/App\ Store\ Validation/Open-PublicKey.swift Jellycuts/Helpers/App\ Store\ Validation/PublicKey.swift     
+
+// xcode   file nav Jellycuts/Helpers/App Store Validation
+// xcode   open PublicKey.swift
+// xcode   un-comment out extension PurchaseHandler: PublicKeyProvider { ... }
+
+// xcode   file nav Packages, click ">" to open up
+// xcode   select "Open-Jellycore", right-click, delete ; click "Move to Trash" 
+// xcode   select "tree-sitter-jelly", right-click, delete ; click "Move to Trash" 
+// xcode   select "Runestone", right-click, delete ; click "Move to Trash" 
+// xcode   select "TreeSitterJellyRunestone", right-click, delete ; click "Move to Trash" 
+// xcode   select "Swift-Themes", right-click, delete ; click "Move to Trash" 
+
+// xcode   iphone 15
+
+// xcode   Top Menu >> Product >> Clean Build Folder ; click Clean
+// xcode   Top Menu >> Product >> Build 
+
+// xcode   ERROR! no such module 'Open-Jellycore'
+// xcode   Top Menu >> File >> Add Package Dependency...
+// xcode   search box   https://github.com/chrysaora-achlyos/Open-Jellycore
+// xcode   dependency Rule: Branch  lab000
+// xcode   click "Add Package"
+// xcode   Choose Package Products for Open-Jellycore; click "Add Package"
+
+// xcode   Top Menu >> Product >> Clean Build Folder ; click Clean
+// xcode   Top Menu >> Product >> Build 
+
+// xcode   Warning "Update to Recommended Settings"   Build Settings checkbox Enable User Script Sandboxing
+// xcode                                              click "Perfom Changes" ; click "Continue"
+
+// xcode   ERROR! no such module 'Open-Jellycore'
+
+// xcode   Top Menu >> File >> Add Package Dependency...
+// xcode   search box   https://github.com/chrysaora-achlyos/Swift-Themes
+// xcode   dependency Rule: Branch  lab000
+// xcode   click "Add Package"
+// xcode   Choose Package Products for Swift-Themes; kind Library Add to Target Jellycuts ; click "Add Package"
+
+// xcode   Top Menu >> Product >> Clean Build Folder ; click Clean
+// xcode   Top Menu >> Product >> Build 
+
+// xcode   ERROR! no such module 'TreeSitterRunestone'
+
+// xcode   Top Menu >> File >> Add Package Dependency...
+// xcode   search box   https://github.com/chrysaora-achlyos/TreeSitterRunestone
+// xcode   dependency Rule: Branch  main
+// xcode   click "Add Package"
+// xcode   Choose Package Products for TreeSitterJellyRunestone ; kind Library Add to Target Jellycuts ; click "Add Package"
+// xcode   Choose Package Products for ... ; click "Add Package"
+
+// xcode   Build Succeeded
+// xcode   WARNING ! /Users/dev/OJPlayground_20240622_000/Open-Jellycuts/Jellycuts/Views/Tools/Dictionary Builder/DictionaryAddValueSheet.swift:115:26 Need to implement nested arrays in arrays
+`
+// xcode   Run in simulator!
+
+// jellycuts click upper right corner "+"
+// jellycuts fill in Name "Hello"; click create
+// jellycuts text(text: "Hello World")
+// jellycuts click rocket
+// jellycuts bottom left click upload arrow
+// jellycuts select shortcuts
+// shortcuts click "+ Add Shortcut"
+// shortcuts bottom right click run triangle
+//    see Hello world
+// shortcuts        click Done
+
+
+// simulator click icon "Home"
+// simulator click Shortcuts
+
+
