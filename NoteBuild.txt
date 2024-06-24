@@ -94,7 +94,7 @@ $CMD cp Jellycuts/Helpers/App\ Store\ Validation/Open-PublicKey.swift Jellycuts/
 // xcode   Warning "Update to Recommended Settings"   Build Settings checkbox Enable User Script Sandboxing
 // xcode                                              click "Perfom Changes" ; click "Continue"
 
-// xcode   ERROR! no such module 'Open-Jellycore'
+// xcode   ERROR! no such module 'Runestone-Themes' (made a mistake in note taking, error might be something else, but Swift-Themes is what needs to be added)
 
 // xcode   Top Menu >> File >> Add Package Dependency...
 // xcode   search box   https://github.com/chrysaora-achlyos/Swift-Themes
