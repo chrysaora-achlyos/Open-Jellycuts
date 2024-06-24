@@ -86,7 +86,7 @@ $CMD cp Jellycuts/Helpers/App\ Store\ Validation/Open-PublicKey.swift Jellycuts/
 // xcode   search box   https://github.com/chrysaora-achlyos/Open-Jellycore
 // xcode   dependency Rule: Branch  lab000
 // xcode   click "Add Package"
-// xcode   Choose Package Products for Open-Jellycore; click "Add Package"
+// xcode   Choose Package Products for Open-Jellycore; ; kind Library Add to Target Jellycuts ;click "Add Package"
 
 // xcode   Top Menu >> Product >> Clean Build Folder ; click Clean
 // xcode   Top Menu >> Product >> Build 
