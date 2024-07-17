@@ -108,7 +108,7 @@ $CMD cp Jellycuts/Helpers/App\ Store\ Validation/Open-PublicKey.swift Jellycuts/
 // xcode   ERROR! no such module 'TreeSitterRunestone'
 
 // xcode   Top Menu >> File >> Add Package Dependency...
-// xcode   search box   https://github.com/chrysaora-achlyos/TreeSitterJellyRunestone
+// xcode   search box   https://github.com/chrysaora-achlyos/TreeSitterJellyRunestone 
 // xcode   dependency Rule: Branch  main
 // xcode   click "Add Package"
 // xcode   Choose Package Products for TreeSitterJellyRunestone ; kind Library Add to Target Jellycuts ; click "Add Package"
