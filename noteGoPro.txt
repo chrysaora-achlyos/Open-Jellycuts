@@ -1,0 +1,300 @@
+#DATE Tue Jun 25 15:37:44 CDT 2024
+
+towards a working bridge
+
+[ ] hardcode isProMode to true
+[ ] rename app to keep from confusing with the purchased app on my phone
+
+Simulator, erase all content and settings
+iPhone 15 (17.5)
+clean build
+run
+
+opens to home screen
+click tools
+click Jellycuts Bridge
+click "+ to add server
+Jellycuts Pro view comes up
+
+look for computed var iProMode and change get to always return true
+
+    static var isProMode: Bool {
+        get {
+            return true
+//            guard let purchaseStatus = SharedDataStorageManager.keychain.getBool(keychainValue) else {
+//                return false
+//            }
+//            return purchaseStatus
+        }
+        
+opens to home screen
+click tools
+click Jellycuts Bridge
+click "+ to add server
+can now add server
+
+does not appear to try and connect,
+going to try installing on phone, but first want to rename app so can tell from real installed version in attempt to prevent from having to delete the purchaced App store version.
+
+
+TARGETS
+ Jellycuts
+  General
+   Identity
+    Display Name:  oJellycuts
+
+select Mark's iPhone SE
+click Run |>
+
+can create a name/address pair 
+  Go8wo8080//192.168.0.116
+  Go8      //192.168.0.116:8080
+
+Task <EEBACC96-E60F-4391-9D6E-0936882F2CB8>.<1> finished with error [-1001] Error Domain=NSURLErrorDomain Code=-1001 "The request timed out." UserInfo={NSErrorFailingURLStringKey=http://192.168.0.116:8080/, NSErrorFailingURLKey=http://192.168.0.116:8080/, _NSURLErrorRelatedURLSessionTaskErrorKey=(
+    "LocalWebSocketTask <EEBACC96-E60F-4391-9D6E-0936882F2CB8>.<1>"
+), _NSURLErrorFailingURLSessionTaskErrorKey=LocalWebSocketTask <EEBACC96-E60F-4391-9D6E-0936882F2CB8>.<1>, NSLocalizedDescription=The request timed out.}
+
+notice http:  not ws:
+need to insure VSCode thingy is "running"
+
+https://blog.teamtreehouse.com/an-introduction-to-websockets
+
+create /Users/dev/OJPlayground_20240622_000/Open-Jellycuts/wsTester/index.html
+
+file:///Users/dev/OJPlayground_20240622_000/Open-Jellycuts/wsTester/index.html 
+
+
+"""
+I was able to connect via the bridge with a work around.
+
+VScode was running on a windows machine 192.168.0.116. first I used
+
+netsh interface portproxy add v4tov4 listenport=80 listenaddress=192.168.0.116 connectport=8080 connectaddress=192.168.0.116
+
+to forward port 80 to 8080.
+
+Then I created a firewall rule to allow in connections from my phone IPAddr on port 80.
+
+In the Enter VSCode Extension details I entered a Name, and 192.168.0.116 without any port numbering
+
+I went this route because when I used "192.168.0.116:8080" I got a "Please enter a valid URL and name" error dialog box.
+
+This reinforces my believe that the error is in the Address parsing or use.
+
+Note: With Open-Jellycut, I am able to create a bridge entry with Address 192.168.0.116:8080 but am not yet able to connect to the vsCode extension.
+"""
+
+
+? Can I look at vscode extension?
+mark@DESKTOP-8O6T8OK:/mnt/c/Users/mark/.vscode/extensions/actuallyzach.jelly-language-support-1.2.2$ ls
+CHANGELOG.md  README.md  extension.js  images  language-configuration.json  node_modules  package.json  publish.bash  snippets  syntaxes
+
+mark@DESKTOP-8O6T8OK:/mnt/c/Users/mark/.vscode/extensions/actuallyzach.jelly-language-support-1.2.2$ tree
+.
+├── CHANGELOG.md
+├── README.md
+├── extension.js
+├── images
+│   └── icon.png
+├── language-configuration.json
+├── node_modules
+...
+mark@DESKTOP-8O6T8OK:/mnt/c/Users/mark/.vscode/extensions/actuallyzach.jelly-language-support-1.2.2$ cat README.md 
+# Jellycuts Support
+This extension allows you to use the Jelly language and connect directly into the Jellycuts iOS app.
+
+## Jelly language support
+### Features
+- Syntax highlighting for the Jelly language
+- Snippets for common functions
+
+## Jelly Bridge
+### Features
+- Connect directly to the Jellycuts iOS app.
+- Export Jellycuts to the Shortcuts app.
+### Commands
+Below are the available commands. To run hit cmd+shift+p (mac) or ctrl+shift+p and type the command you want to perform.
+1. Open Jellycuts Bridge
+    - Opens a Jellycuts Bridge. This is a websocket server running on port 8080 that you can connect to using the Jellycuts App.
+2. Close Jellycuts Bridge
+    - Closes all connections to the current Jellycuts Bridge.
+
+# Release Notes
+### 1.2
+Updated to match Jellycuts 1.2
+
+### 1.0.2
+Files are now updated on file save
+
+### 1.0.1
+Updated to a new version of the bridge to work with Jellycuts 1.0
+
+### 1.0.0
+Fixed an issue with comment highlighting
+
+### 0.9.26
+Initial release of 1.0.0 to go with Jellycuts 0.9(17).
+
+### 0.9.25
+Fixed a bug where the websocket server was not closing correctly.
+
+
+
+mark@DESKTOP-8O6T8OK:/mnt/c/Users/mark/.vscode/extensions/actuallyzach.jelly-language-support-1.2.2$ cat extension.js 
+const vscode = require("vscode");
+const WebSocket = require("ws");
+const path = require("path");
+const port = 8080;
+const internalIp = require('internal-ip');
+const fs = require('fs')
+
+const output = vscode.window.createOutputChannel("Jellycuts");
+var cacheWS = null
+var cacheWSS = null
+output.show(true);
+
+/* MARK: Initializing file system watcher to update available projects */
+let watcher = vscode.workspace.createFileSystemWatcher("**/*.jelly");
+watcher.onDidChange(() => {
+    updateApp(cacheWS, "get")
+})
+watcher.onDidCreate(() => {
+    updateApp(cacheWS, "get")
+})
+watcher.onDidDelete(() => {
+    updateApp(cacheWS, "get")
+})
+
+function activate(context) {
+
+    const runServerCommand = 'jellycuts-support.runserver';
+
+    const runServerHandler = () => {
+        const wss = new WebSocket.Server({ port: port });
+        cacheWSS = wss
+        wss.setMaxListeners(1);
+
+        vscode.window.showInformationMessage(
+            `Jellycuts bridge opened on port ${internalIp.v4.sync()}:${port}`
+        );
+
+        wss.on("connection", function connection(ws, req) {
+            vscode.window.showInformationMessage(`Client Connected -> ${req.connection.remoteAddress}`);
+            cacheWS = ws
+
+            ws.on("message", function incoming(message) {
+                if (message == "run") {
+                    updateApp(ws, "run")
+                } else if (message == 'get') {
+                    updateApp(ws, "get")
+                } else if (message == "export") {
+                    updateApp(ws, "export")
+                } else if (message == "download") {
+                    updateApp(ws, "download")
+                } else if (message == "closing") {
+                    vscode.window.showInformationMessage(`Client Disconnected -> ${req.connection.remoteAddress}`);
+                    cacheWS = null
+                } else if (message != "ping") {
+                    output.append(`${message}\n`);
+                }
+            });
+        });
+    };
+    context.subscriptions.push(vscode.commands.registerCommand(runServerCommand, runServerHandler));
+
+    const closeServerCommand = 'jellycuts-support.closeserver';
+
+    const closeServerHandler = () => {
+        if (cacheWS != null) {
+            for (const client of cacheWSS.clients) {
+                client.close();
+            }
+            vscode.window.showInformationMessage(`All acitve Jellycuts Bridge connections have been closed`);
+        } else {
+            // vscode.window.showInformationMessage(`There are no active connections to the Jellycuts Bridge`);
+        }
+        cacheWSS.close()
+        vscode.window.showInformationMessage(`Closed Jellycuts Bridge`);
+    };
+    context.subscriptions.push(vscode.commands.registerCommand(closeServerCommand, closeServerHandler));
+
+    context.subscriptions.push(vscode.workspace.onDidSaveTextDocument(() => {
+        updateApp(cacheWS, "get")
+    }));
+
+    // const runHandler = () => {
+    //     if (cacheWS != null) {
+    //         vscode.window.showInformationMessage(`Running Jellycut on connected device`);
+    //         updateApp(cacheWS, "run")
+    //     } else {
+    //         vscode.window.showWarningMessage(`No bridge started or no connections to the current bridge`);
+    //     }
+    // };
+
+    // context.subscriptions.push(vscode.commands.registerCommand("jellycuts-support.run", runHandler));
+
+    // const exportHandler = () => {
+    //     if (cacheWS != null) {
+    //         vscode.window.showInformationMessage(`Exporting Jellycut to Shortcuts`);
+    //         updateApp(cacheWS, "export")
+    //     } else {
+    //         vscode.window.showWarningMessage(`No bridge started or no connections to the current bridge`);
+    //     }
+    // };
+
+    // context.subscriptions.push(vscode.commands.registerCommand("jellycuts-support.export", exportHandler));
+}
+
+function updateApp(ws, type) {
+    if (type != 'get') {
+        output.clear();
+        const editor = vscode.window.activeTextEditor;
+        var fileName = path.basename(editor.document.uri.fsPath);
+
+        if (editor) {
+            let document = editor.document;
+            const documentText = document.getText();
+            var dictionary = { "fileName": fileName, "text": documentText, "type": type }
+            ws.send(JSON.stringify(dictionary));
+        }
+    } else {
+        vscode.workspace.findFiles('**/*.jelly').then((uri => {
+                console.log('Updating Files')
+                let files = []
+                uri.forEach(element => {
+                    try {
+                        const data = fs.readFileSync(element.fsPath, 'utf8')
+                        files.push({ 'path': element.path, 'name': path.basename(element.path).replace('.jelly', ''), 'text': data })
+                    } catch (err) {
+                        console.error(err)
+                    }
+                });
+                var dictionary = { "type": 'receiveFiles', 'files': files }
+                ws.send(JSON.stringify(dictionary))
+            }))
+            // ws.send(JSON.stringify(dictionary));
+    }
+}
+/*
+struct JFile: Codable {
+    var path: String
+    var name: String
+    var text: String
+}
+*/
+// this method is called when your extension is deactivated
+function deactivate() {
+    vscode.window.showInformationMessage(`Jellycuts bridge closed`);
+}
+
+module.exports = {
+    activate,
+    deactivate,
+};
+
+
+---
+< Bridge Servers
+ Go8
+  Statusa       [Pull Code From Server]
+ (G) Connected  [Build]  [Compile] 

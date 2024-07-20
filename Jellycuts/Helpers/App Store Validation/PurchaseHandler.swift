@@ -74,10 +74,11 @@ class PurchaseHandler: NSObject {
     
     static var isProMode: Bool {
         get {
-            guard let purchaseStatus = SharedDataStorageManager.keychain.getBool(keychainValue) else {
-                return false
-            }
-            return purchaseStatus
+            return true
+//            guard let purchaseStatus = SharedDataStorageManager.keychain.getBool(keychainValue) else {
+//                return false
+//            }
+//            return purchaseStatus
         }
         set(value) {
             SharedDataStorageManager.keychain.set(value, forKey: PurchaseHandler.keychainValue)
